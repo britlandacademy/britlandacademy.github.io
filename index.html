@@ -6,6 +6,8 @@
 <title>Britland Academy · Inglês, Espanhol e Português online</title>
 <meta name="description" content="Aulas online de inglês, espanhol e português com foco em falar. Individuais (VIP) ou em grupo de até 4 alunos. English, Spanish and Portuguese lessons online.">
 <link rel="icon" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#10224a;--navy2:#0b1733;--gold:#c9a13b;--gold2:#e4c06a;--red:#b3202a;--ink:#17202f;--mut:#5a6577;--bg:#faf8f3;--card:#fff;--line:#e6e0d2}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#eef0f5;--mut:#a9b2c3;--bg:#0b1020;--card:#131a30;--line:#25304f}}
@@ -16,8 +18,14 @@ a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 nav{position:sticky;top:0;z-index:5;background:var(--navy2);color:#fff}
 nav .wrap{display:flex;align-items:center;gap:14px;min-height:60px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.06em;font-size:15px}
-.brand img{height:38px;width:auto}.brand i{font-style:normal;color:var(--gold2);font-weight:600;margin-left:2px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand img{height:42px;width:auto}
+.lk{display:flex;flex-direction:column;align-items:center;line-height:1}
+.lk b{font:700 20px/1 'Noto Serif',Georgia,serif;color:#fff;letter-spacing:.01em}
+.lk i{font:500 9px/1 Montserrat,system-ui,sans-serif;font-style:normal;color:#e5405a;letter-spacing:.42em;margin:5px -.42em 0 0}
+.hero .lk{margin-top:22px}.hero .lk b{font-size:clamp(34px,5vw,48px)}.hero .lk i{font-size:clamp(12px,1.6vw,15px);margin-top:10px}
+.hero .lk::after{content:"";width:150px;height:2px;background:#e4c06a;margin-top:18px}
+.hero .shield{flex-direction:column;align-items:center}
 nav .sp{flex:1}
 nav a.l{font-size:14px;text-decoration:none;opacity:.9;padding:6px 4px}
 nav a.l:hover{opacity:1;color:var(--gold2)}
@@ -75,13 +83,13 @@ footer a{color:var(--gold2)}
 .fl{position:fixed;right:18px;bottom:18px;z-index:6;background:#25d366;color:#06361a;border-radius:99px;padding:13px 18px;font:700 15px system-ui;text-decoration:none;box-shadow:0 8px 24px #0006;display:flex;gap:8px;align-items:center}
 .fl:hover{filter:brightness(1.07)}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
-@media(max-width:820px){.fy,.hero .wrap,.grid3,.grid2,.price,.band{grid-template-columns:1fr}.hero .shield{order:-1}.hero .shield img{width:120px;height:auto}nav a.l{display:none}section{padding:50px 0}.hero{padding:44px 0 56px}.plan.vip{order:-1}}
+@media(max-width:820px){.fy,.hero .wrap,.grid3,.grid2,.price,.band{grid-template-columns:1fr}.hero .shield{order:-1}.hero .shield img{width:120px;height:auto}.hero .lk{margin-top:14px}nav a.l{display:none}section{padding:50px 0}.hero{padding:44px 0 56px}.plan.vip{order:-1}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
-<a class="brand" href="#top"><img src="img/britland-shield.png" alt=""><span>BRITLAND<i>ACADEMY</i></span></a>
+<a class="brand" href="#top"><img src="img/britland-shield.png" alt=""><span class="lk"><b>BRITLAND</b><i>ACADEMY</i></span></a>
 <span class="sp"></span>
 <a class="l" href="#how" data-t="nav1">Como funciona</a>
 <a class="l" href="#courses" data-t="nav2">Cursos</a>
@@ -101,7 +109,7 @@ footer a{color:var(--gold2)}
 <div class="trust"><span data-t="t1">2 aulas grátis na semana experimental</span><span data-t="t2">Aulas ao vivo</span><span data-t="t3">Horário combinado com você</span></div>
 <div class="langs"><span class="tag" data-t="l1">Inglês</span><span class="tag" data-t="l2">Espanhol</span><span class="tag" data-t="l3">Português</span><span class="tag" data-t="l4">Business English</span></div>
 </div>
-<div class="shield"><img src="img/britland-shield.png" alt="Britland Academy" width="240" height="281"></div>
+<div class="shield"><img src="img/britland-shield.png" alt="Britland Academy" width="240" height="281"><span class="lk"><b>BRITLAND</b><i>ACADEMY</i></span></div>
 </div></header>
 
 <section id="foryou" class="alt"><div class="wrap">
