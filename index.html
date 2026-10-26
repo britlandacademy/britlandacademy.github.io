@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Britland Academy · Inglês, Espanhol e Português online</title>
+<meta name="description" content="Aulas online de inglês, espanhol e português com foco em falar. Individuais (VIP) ou em grupo de até 4 alunos. English, Spanish and Portuguese lessons online.">
+<link rel="icon" href="favicon-32.png">
+<style>
+:root{--navy:#10224a;--navy2:#0b1733;--gold:#c9a13b;--gold2:#e4c06a;--red:#b3202a;--ink:#17202f;--mut:#5a6577;--bg:#faf8f3;--card:#fff;--line:#e6e0d2}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#eef0f5;--mut:#a9b2c3;--bg:#0b1020;--card:#131a30;--line:#25304f}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,'Times New Roman',serif}
+h1,h2,h3,.sans,nav,button,.btn,.tag{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:var(--navy2);color:#fff}
+nav .wrap{display:flex;align-items:center;gap:14px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.06em;font-size:15px}
+.brand img{height:38px;width:auto}.brand i{font-style:normal;color:var(--gold2);font-weight:600;margin-left:2px}
+nav .sp{flex:1}
+nav a.l{font-size:14px;text-decoration:none;opacity:.9;padding:6px 4px}
+nav a.l:hover{opacity:1;color:var(--gold2)}
+.lang{display:flex;border:1px solid #ffffff55;border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:#fff;padding:5px 11px;font-size:13px;cursor:pointer;font-weight:600}
+.lang button[aria-pressed=true]{background:var(--gold);color:#1a1405}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#1a1405;text-decoration:none;font-weight:700;font-size:16px;padding:13px 24px;border-radius:99px;border:2px solid var(--gold);transition:.15s}
+.btn:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-1px)}
+.btn.o{background:transparent;color:#fff;border-color:#ffffff88}.btn.o:hover{background:#ffffff18;border-color:#fff}
+.btn.d{background:var(--navy);border-color:var(--navy);color:#fff}.btn.d:hover{background:#1b3470;border-color:#1b3470}
+.btn.g{background:transparent;color:var(--ink);border-color:var(--line)}.btn.g:hover{border-color:var(--gold)}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#24407f55,transparent),linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,5.2vw,56px);line-height:1.08;margin:0 0 18px;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p.lead{font-size:19px;color:#d8dff0;max-width:34em;margin:0 0 28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .shield{display:flex;justify-content:center}.hero .shield img{width:min(260px,60%);height:auto;filter:drop-shadow(0 20px 40px #0008)}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tag{font-size:13px;font-weight:600;border:1px solid #ffffff44;border-radius:99px;padding:5px 13px;color:#e8ecf7}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 4px;font:600 14px system-ui;color:#e4c06a}.trust span:before{content:"✓ ";font-weight:800}
+.fy{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.fy .card{padding:18px 20px}.fy .card p{color:var(--ink);font-size:16px}
+section{padding:68px 0}
+section h2{font-size:clamp(26px,3.6vw,36px);line-height:1.15;margin:0 0 10px;color:var(--navy)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) section h2{color:#fff}}
+.sub{color:var(--mut);max-width:40em;margin:0 0 34px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--mut);font-size:16px}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold2);font:700 16px system-ui;margin-bottom:12px}
+.alt{background:linear-gradient(var(--card),var(--card));border-block:1px solid var(--line)}
+.course h3{font-size:21px}.course .k{font:600 12px system-ui;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;position:relative}
+.plan.vip{border:2px solid var(--gold);box-shadow:0 18px 50px #c9a13b22;background:linear-gradient(180deg,#fffaf0,var(--card) 40%)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .plan.vip{background:linear-gradient(180deg,#1d2440,var(--card) 40%)}}
+.plan .badge{position:absolute;top:-13px;left:24px;background:var(--gold);color:#1a1405;font:700 12px system-ui;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+.plan h3{margin:0;font-size:22px}
+.amt{font:800 48px/1 system-ui;margin:16px 0 2px;color:var(--navy)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .amt{color:#fff}}
+.amt small{font:600 16px system-ui;color:var(--mut)}
+.per{font:14px system-ui;color:var(--mut);margin-bottom:16px}
+.plan ul{list-style:none;padding:0;margin:0 0 24px;flex:1}
+.plan li{padding:7px 0 7px 26px;position:relative;font-size:16px;border-top:1px solid var(--line)}
+.plan li:first-child{border-top:0}
+.plan li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+.plan .btn{justify-content:center}
+.note{text-align:center;color:var(--mut);font-size:14px;margin-top:18px;font-family:system-ui}
+.band{background:var(--navy);color:#fff;border-radius:22px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.band h2{color:#fff;margin:0 0 6px}.band p{margin:0;color:#d0d9ee}
+footer{background:var(--navy2);color:#c8d0e4;padding:38px 0;font:14px system-ui}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between}
+footer a{color:var(--gold2)}
+.fl{position:fixed;right:18px;bottom:18px;z-index:6;background:#25d366;color:#06361a;border-radius:99px;padding:13px 18px;font:700 15px system-ui;text-decoration:none;box-shadow:0 8px 24px #0006;display:flex;gap:8px;align-items:center}
+.fl:hover{filter:brightness(1.07)}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+@media(max-width:820px){.fy,.hero .wrap,.grid3,.grid2,.price,.band{grid-template-columns:1fr}.hero .shield{order:-1}.hero .shield img{width:120px;height:auto}nav a.l{display:none}section{padding:50px 0}.hero{padding:44px 0 56px}.plan.vip{order:-1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#top"><img src="img/britland-shield.png" alt=""><span>BRITLAND<i>ACADEMY</i></span></a>
+<span class="sp"></span>
+<a class="l" href="#how" data-t="nav1">Como funciona</a>
+<a class="l" href="#courses" data-t="nav2">Cursos</a>
+<a class="l" href="#prices" data-t="nav3">Planos</a>
+<a class="l" href="app/" data-t="nav4">Área do aluno</a>
+<div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-l="pt" aria-pressed="true">PT</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<h1 data-t="h1">Aprenda a <em>falar</em> de verdade, com um professor só seu.</h1>
+<p class="lead" data-t="lead">Aulas online de inglês, espanhol e português. Você responde perguntas o tempo todo, fala desde o primeiro minuto e avança no seu ritmo.</p>
+<div class="cta">
+<a class="btn wa" href="#" data-t="cta1">Marcar uma aula experimental</a>
+<a class="btn o" href="#prices" data-t="cta2">Ver planos</a>
+</div>
+<div class="trust"><span data-t="t1">2 aulas grátis na semana experimental</span><span data-t="t2">Aulas ao vivo</span><span data-t="t3">Horário combinado com você</span></div>
+<div class="langs"><span class="tag" data-t="l1">Inglês</span><span class="tag" data-t="l2">Espanhol</span><span class="tag" data-t="l3">Português</span><span class="tag" data-t="l4">Business English</span></div>
+</div>
+<div class="shield"><img src="img/britland-shield.png" alt="Britland Academy" width="240" height="281"></div>
+</div></header>
+
+<section id="foryou" class="alt"><div class="wrap">
+<h2 data-t="fy">Esta página é para você se…</h2>
+<div class="fy"><div class="card"><p data-t="fy1"></p></div><div class="card"><p data-t="fy2"></p></div><div class="card"><p data-t="fy3"></p></div><div class="card"><p data-t="fy4"></p></div><div class="card"><p data-t="fy5"></p></div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2 data-t="how">Como são as aulas</h2>
+<p class="sub" data-t="howsub">Um método direto: o professor pergunta, você responde. Sem decorar regras soltas e sem medo de errar.</p>
+<div class="grid3">
+<div class="card"><div class="num">1</div><h3 data-t="s1h">Você fala o tempo todo</h3><p data-t="s1p">Perguntas e respostas curtas, em ritmo constante. A maior parte da aula é a sua voz, não a do professor.</p></div>
+<div class="card"><div class="num">2</div><h3 data-t="s2h">Correção na hora</h3><p data-t="s2p">Cada erro é corrigido no momento em que acontece, e você repete até sair natural.</p></div>
+<div class="card"><div class="num">3</div><h3 data-t="s3h">Estude também fora da aula</h3><p data-t="s3p">Os alunos têm uma área online com textos, áudios e exercícios corrigidos automaticamente, para praticar entre as aulas.</p></div>
+</div></div></section>
+
+<section class="alt" id="courses"><div class="wrap">
+<h2 data-t="co">Cursos</h2>
+<p class="sub" data-t="cosub">Do primeiro dia até a fluência, com a mesma forma de estudar em todos os idiomas.</p>
+<div class="grid2">
+<div class="card course"><div class="k" data-t="c1k">Idioma</div><h3 data-t="c1h">Inglês</h3><p data-t="c1p">Do iniciante ao avançado, com ênfase em conversação, compreensão e vocabulário do dia a dia.</p></div>
+<div class="card course"><div class="k" data-t="c2k">Idioma</div><h3 data-t="c2h">Espanhol</h3><p data-t="c2p">Comece do zero e ganhe confiança para viajar, trabalhar e conversar com naturalidade.</p></div>
+<div class="card course"><div class="k" data-t="c3k">Idioma</div><h3 data-t="c3h">Português</h3><p data-t="c3p">Para estrangeiros que querem falar português com clareza, e para brasileiros que querem escrever melhor.</p></div>
+<div class="card course"><div class="k" data-t="c4k">Profissional</div><h3 data-t="c4h">Business English</h3><p data-t="c4p">Reuniões, e-mails, apresentações e negociação: o inglês que o seu trabalho exige.</p></div>
+</div></div></section>
+
+<section id="prices"><div class="wrap">
+<h2 style="text-align:center" data-t="pr">Planos</h2>
+<p class="sub" style="text-align:center;margin-inline:auto" data-t="prsub">Escolha entre atenção exclusiva ou aulas em turma pequena. Valores mensais.</p>
+<div class="price">
+<div class="plan vip"><span class="badge" data-t="vipb">Atenção exclusiva</span>
+<h3>VIP</h3>
+<div class="amt">€120<small data-t="mo"> /mês</small></div>
+<div class="per" data-t="vipper">2 aulas por semana · cerca de €15 por aula</div>
+<ul><li data-t="v1">Aulas individuais ao vivo</li><li data-t="v2">100% do tempo de aula é seu</li><li data-t="v3">Ritmo e conteúdo feitos para o seu objetivo</li><li data-t="v4">Horários combinados com você</li></ul>
+<a class="btn wa" href="#" data-t="vipcta">Quero o VIP</a></div>
+<div class="plan"><h3 data-t="gh">Em grupo</h3>
+<div class="amt">€80<small data-t="mo2"> /mês</small></div>
+<div class="per" data-t="gper">Turma de no máximo 4 alunos</div>
+<ul><li data-t="g1">Aulas ao vivo em turma pequena</li><li data-t="g2">Todos falam em toda aula</li><li data-t="g3">Estude com colegas no seu nível</li></ul>
+<a class="btn d wa" href="#" data-t="gcta">Quero o grupo</a></div>
+</div>
+<p class="note" data-t="note">Não sabe qual escolher? Faça uma aula experimental e converse comigo.</p>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="band">
+<div><h2 data-t="bh">Qual é o seu nível?</h2><p data-t="bp">Faça o teste de nível, descubra onde você está e eu indico por onde começar.</p></div>
+<a class="btn" href="app/placement.html" data-t="bcta">Fazer o teste de nível</a>
+</div></div></section>
+
+<section><div class="wrap" style="text-align:center">
+<h2 data-t="fh">Vamos começar?</h2>
+<p class="sub" style="margin-inline:auto" data-t="fp">Me chame no WhatsApp e combinamos sua aula experimental.</p>
+<a class="btn wa" href="#" data-t="fcta">Falar no WhatsApp</a>
+</div></section>
+
+<footer><div class="wrap">
+<span>© Britland Academy</span>
+<span><a href="app/" data-t="fa">Área do aluno</a></span>
+</div></footer>
+<a class="fl wa" href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 13.9c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.9-2 .2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.5-.1l1.800.9c.3.1.4.2.5.3.1.2.1.8-.1 1.400z"/></svg><span data-t="wa">WhatsApp</span></a>
+
+<script>
+var NUM='5511914881274';
+var D={pt:{fy5:'Está começando do zero e quer um professor que guie cada passo.',fy4:'Já estudou por anos e sente que não sai do lugar.',fy3:'Mora fora do Brasil e quer se comunicar sem depender de tradução.',fy2:'Precisa do idioma no trabalho, em reuniões ou entrevistas.',fy1:'Você entende bastante, mas trava quando precisa falar.',fy:'Esta página é para você se…',t3:'Horário combinado com você',t2:'Aulas ao vivo',t1:'2 aulas grátis na semana experimental',nav1:'Como funciona',nav2:'Cursos',nav3:'Planos',nav4:'Área do aluno',
+h1:'Pare de travar na hora de falar. <em>Fale com confiança</em> em aulas individuais ao vivo.',lead:'Inglês, espanhol e português, online e no seu horário. Você fala desde a primeira aula, é corrigido na hora e termina cada encontro falando mais.',cta1:'Começar minha semana grátis',cta2:'Ver planos',l1:'Inglês',l2:'Espanhol',l3:'Português',l4:'Business English',
+how:'O que você ganha com as aulas',howsub:'Resultado primeiro, método depois: tudo foi pensado para você falar mais e com menos medo.',s1h:'Fale desde a primeira aula',s1p:'Perguntas e respostas curtas, em ritmo constante. A maior parte do tempo é a sua voz, não a do professor.',s2h:'Perca o medo de errar',s2p:'Cada erro é corrigido na hora e você repete até soar natural. Errar aqui é parte do caminho.',s3h:'Continue evoluindo entre as aulas',s3p:'Você ganha uma área online com textos, áudios e exercícios corrigidos automaticamente para praticar no seu tempo.',
+co:'Cursos',cosub:'Do primeiro dia até a fluência, com a mesma forma de estudar em todos os idiomas.',c1k:'Idioma',c2k:'Idioma',c3k:'Idioma',c4k:'Profissional',c1h:'Inglês',c1p:'Do iniciante ao avançado, com ênfase em conversação, compreensão e vocabulário do dia a dia.',c2h:'Espanhol',c2p:'Comece do zero e ganhe confiança para viajar, trabalhar e conversar com naturalidade.',c3h:'Português',c3p:'Para estrangeiros que querem falar português com clareza, e para brasileiros que querem escrever melhor.',c4h:'Business English',c4p:'Reuniões, e-mails, apresentações e negociação: o inglês que o seu trabalho exige.',
+pr:'Escolha seu plano',prsub:'Comece pela semana experimental: 2 aulas grátis. Só depois você decide.',vipb:'Atenção exclusiva',mo:' /mês',mo2:' /mês',vipper:'2 aulas por semana · cerca de €15 por aula',v1:'Aulas individuais ao vivo',v2:'100% do tempo de aula é seu',v3:'Ritmo e conteúdo feitos para o seu objetivo',v4:'Horários combinados com você',vipcta:'Começar semana grátis no VIP',gh:'Em grupo',gper:'Turma de no máximo 4 alunos',g1:'Aulas ao vivo em turma pequena',g2:'Todos falam em toda aula',g3:'Estude com colegas no seu nível',gcta:'Começar semana grátis no grupo',note:'Em dúvida entre os dois? Comece pela semana grátis e me conte seu objetivo.',
+bh:'Descubra seu nível em minutos',bp:'Faça o teste de nível e eu indico o melhor ponto de partida para você.',bcta:'Fazer o teste de nível',fh:'Faça 2 aulas grátis e descubra seu nível',fp:'Me chame no WhatsApp, escolhemos um horário e você começa a falar já nesta semana.',fcta:'Quero minha semana grátis',fa:'Área do aluno',wa:'WhatsApp',
+msg:'Olá! Quero fazer a semana experimental (2 aulas grátis) na Britland Academy.',msgvip:'Olá! Quero a semana experimental (2 aulas grátis) no plano VIP da Britland Academy.',msgg:'Olá! Quero a semana experimental (2 aulas grátis) no plano em grupo da Britland Academy.'},
+en:{fy5:'You are starting from zero and want a teacher to guide every step.',fy4:'You have studied for years and feel stuck.',fy3:'You live abroad and want to communicate without relying on translation.',fy2:'You need the language at work, in meetings or interviews.',fy1:'You understand a lot, but freeze when you have to speak.',fy:'This page is for you if…',t3:'Schedule agreed with you',t2:'Live lessons',t1:'2 free lessons in the trial week',nav1:'How it works',nav2:'Courses',nav3:'Plans',nav4:'Student area',
+h1:'Stop freezing when you have to speak. <em>Speak with confidence</em> in live one-to-one lessons.',lead:'English, Spanish and Portuguese, online and on your schedule. You speak from the first lesson, get corrected on the spot and leave every class speaking more.',cta1:'Start my free week',cta2:'See plans',l1:'English',l2:'Spanish',l3:'Portuguese',l4:'Business English',
+how:'What you get from the lessons',howsub:'Results first, method second: everything is built so you speak more and fear less.',s1h:'Speak from the first lesson',s1p:'Short questions and answers at a steady pace. Most of the time is your voice, not the teacher’s.',s2h:'Lose the fear of mistakes',s2p:'Every mistake is corrected on the spot and you repeat until it sounds natural. Mistakes are part of the way.',s3h:'Keep improving between lessons',s3p:'You get an online area with texts, audio and automatically corrected exercises to practise in your own time.',
+co:'Courses',cosub:'From day one to fluency, with the same way of studying in every language.',c1k:'Language',c2k:'Language',c3k:'Language',c4k:'Professional',c1h:'English',c1p:'From beginner to advanced, with emphasis on conversation, listening and everyday vocabulary.',c2h:'Spanish',c2p:'Start from zero and gain the confidence to travel, work and chat naturally.',c3h:'Portuguese',c3p:'For foreigners who want to speak clear Portuguese, and for Brazilians who want to write better.',c4h:'Business English',c4p:'Meetings, emails, presentations and negotiation: the English your job demands.',
+pr:'Choose your plan',prsub:'Start with the trial week: 2 free lessons. Decide only afterwards.',vipb:'Exclusive attention',mo:' /month',mo2:' /month',vipper:'2 lessons a week · about €15 per lesson',v1:'Live one-to-one lessons',v2:'100% of the lesson time is yours',v3:'Pace and content built around your goal',v4:'Schedule agreed with you',vipcta:'Start my free week with VIP',gh:'Group',gper:'Class of up to 4 students',g1:'Live lessons in a small group',g2:'Everyone speaks in every lesson',g3:'Study with classmates at your level',gcta:'Start my free week in a group',note:'Torn between the two? Start with the free week and tell me your goal.',
+bh:'Find your level in minutes',bp:'Take the placement test and I will tell you the best place to start.',bcta:'Take the placement test',fh:'Take 2 free lessons and find your level',fp:'Message me on WhatsApp, we pick a time and you start speaking this very week.',fcta:'I want my free week',fa:'Student area',wa:'WhatsApp',
+msg:'Hello! I would like the trial week (2 free lessons) at Britland Academy.',msgvip:'Hello! I would like the trial week (2 free lessons) on the VIP plan at Britland Academy.',msgg:'Hello! I would like the trial week (2 free lessons) on the group plan at Britland Academy.'}};
+var lang='pt';try{var s=localStorage.getItem('bl-lang');if(s==='en'||s==='pt')lang=s;else if(!/^pt/i.test(navigator.language||''))lang='en';}catch(e){if(!/^pt/i.test(navigator.language||''))lang='en';}
+function wa(k){return 'https://wa.me/'+NUM+'?text='+encodeURIComponent(D[lang][k]);}
+function apply(){
+  document.documentElement.lang=lang==='pt'?'pt-BR':'en';
+  document.querySelectorAll('[data-t]').forEach(function(e){var v=D[lang][e.getAttribute('data-t')];if(v!=null)e.innerHTML=v;});
+  document.querySelectorAll('.wa').forEach(function(a){var t=a.getAttribute('data-t');a.href=wa(t==='vipcta'?'msgvip':(t==='gcta'?'msgg':'msg'));a.target='_blank';a.rel='noopener';});
+  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l')===lang?'true':'false');});
+  try{localStorage.setItem('bl-lang',lang);}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){lang=b.getAttribute('data-l');apply();});});
+apply();
+</script>
+</body></html>
