@@ -33,7 +33,7 @@ a{color:inherit}
 .bar a.wb{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1a1405;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;text-decoration:none;margin-left:6px}
 /* ---------- abertura ---------- */
 .hero{position:relative;height:100svh;min-height:600px;display:flex;overflow:hidden}
-.pane{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:150px 16px 50px;cursor:pointer;transition:flex .7s cubic-bezier(.2,.8,.2,1);overflow:hidden;text-decoration:none;color:#fff}
+.pane{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:270px 16px 50px;cursor:pointer;transition:flex .7s cubic-bezier(.2,.8,.2,1);overflow:hidden;text-decoration:none;color:#fff}
 .pane.uk{background:radial-gradient(120% 90% at 20% 10%,#2748c8 0,#012169 45%,#0a0f3a 100%)}
 .pane.es{background:radial-gradient(120% 90% at 80% 10%,#ffd23f 0,#e0482b 40%,#aa151b 100%)}
 .hero:hover .pane{flex:.85}.hero .pane:hover{flex:1.4}
@@ -44,16 +44,12 @@ a{color:inherit}
 .pane p{font-size:clamp(14px,1.5vw,18px);max-width:28ch;text-align:center;opacity:.95;transform:translateY(var(--ph,0))}
 .go{margin-top:4px;display:inline-flex;gap:10px;align-items:center;font-weight:700;border:2px solid rgba(255,255,255,.85);padding:10px 22px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(4px);transition:.3s}
 .pane:hover .go{background:#fff;color:#111}
-.brand{position:absolute;left:50%;top:calc(18px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:6;text-align:center;pointer-events:none;width:max-content;max-width:94vw}
-.brand b{display:block;font:700 clamp(26px,4.4vw,52px) BLSerif,Georgia,serif;letter-spacing:.02em;background:linear-gradient(90deg,#fff,#e4c06a 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 12px rgba(0,0,0,.55))}
-.brand span{display:block;margin-top:4px;font:700 clamp(10px,1.3vw,14px) BLSans,Arial;letter-spacing:.34em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.7)}
-.shield{position:absolute;left:50%;top:50%;z-index:7;width:clamp(112px,13vw,170px);transform:translate(-50%,-50%) translateY(var(--sy,0)) scale(var(--ss,1));pointer-events:none;filter:drop-shadow(0 0 28px rgba(228,192,106,.85)) drop-shadow(0 14px 22px rgba(0,0,0,.6))}
-.shield::before{content:"";position:absolute;inset:-16%;border-radius:50%;background:radial-gradient(circle,rgba(228,192,106,.55),transparent 65%);z-index:-1;animation:halo 3.4s ease-in-out infinite}
-@keyframes halo{50%{transform:scale(1.18);opacity:.65}}
-.shield img{display:block;width:100%;height:auto}
+.brand{position:absolute;left:50%;top:calc(16px + env(safe-area-inset-top,0px));transform:translateX(-50%) translateY(var(--by,0));z-index:6;text-align:center;pointer-events:none;width:max-content;max-width:94vw}
+.brand img{display:block;width:clamp(150px,21vw,250px);height:auto;margin:0 auto;border-radius:20px;border:1px solid rgba(228,192,106,.55);box-shadow:0 0 36px rgba(228,192,106,.45),0 16px 30px rgba(0,0,0,.55)}
+.brand span{display:block;margin-top:10px;font:700 clamp(10px,1.2vw,13px) BLSans,Arial;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.7)}
 .scrollhint{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:5;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.85;animation:bob 2s ease-in-out infinite;pointer-events:none}
 @keyframes bob{50%{transform:translate(-50%,8px)}}
-@media(max-width:700px){.hero{flex-direction:column}.pane{padding:104px 16px 58px;gap:8px}.pane+.pane{padding:58px 16px 40px}.pane canvas{width:min(46%,190px)}.hero:hover .pane,.hero .pane:hover{flex:1}.pane p{display:none}.scrollhint{display:none}.shield{width:96px}.pane h2{font-size:38px}}
+@media(max-width:700px){.hero{flex-direction:column}.pane{padding:178px 16px 58px;gap:8px}.pane+.pane{padding:58px 16px 40px}.pane canvas{width:min(46%,190px)}.hero:hover .pane,.hero .pane:hover{flex:1}.pane p{display:none}.scrollhint{display:none}.brand img{width:132px}.pane h2{font-size:38px}}
 /* ---------- tour fixo ---------- */
 .tour{position:relative;height:440vh}
 .pin{position:sticky;top:0;height:100svh;overflow:hidden}
@@ -162,13 +158,12 @@ footer{padding:26px 16px calc(26px + env(safe-area-inset-bottom,0px));text-align
 <body>
 <canvas id="dust"></canvas>
 
-<div class="bar" id="bar"><img src="app/img/britland-shield.png" alt=""><div><b>Britland</b><i>ACADEMY</i></div><a class="wb wa" data-m="msg" href="#">WhatsApp</a></div>
+<div class="bar" id="bar"><img src="app/img/britland-shield.png" alt="Britland Academy"><a class="wb wa" data-m="msg" href="#">WhatsApp</a></div>
 
 <header class="hero" id="top">
-  <div class="brand"><b>Britland Academy</b><span>Inglês · Español · Business English</span></div>
+  <div class="brand"><img src="britland-logotipo.jpg" alt="Britland Academy"><span>Inglês · Español · Business English</span></div>
   <a class="pane uk" href="#tour" data-go="0"><canvas class="flag" data-f="uk" width="600" height="300"></canvas><h2>English</h2><p>Fale inglês com segurança, do primeiro dia à fluência.</p><span class="go">Conhecer o curso <b>→</b></span></a>
   <a class="pane es" href="#tour" data-go="1"><canvas class="flag" data-f="es" width="600" height="300"></canvas><h2>Español</h2><p>Hable español sin travarse, com acompanhamento de perto.</p><span class="go">Conhecer o curso <b>→</b></span></a>
-  <div class="shield" id="shield"><img src="app/img/britland-shield.png" alt="Britland Academy"></div>
   <div class="scrollhint">role para explorar</div>
 </header>
 
@@ -286,7 +281,7 @@ function wave(c,img,ph,amp){var x=c.getContext('2d'),W=c.width,H=c.height,A=H*.0
 if('IntersectionObserver' in window){var fo=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target);});});flags.forEach(function(c){fo.observe(c);});}
 /* ---- rolagem ---- */
 var sy=0,lastSy=0,vel=0,P=0,ready=false;
-var tour=$('#tour'),sU=$('#sU'),sE=$('#sE'),bgE=$('#bgE'),prog=[].slice.call(document.querySelectorAll('.prog i')),bar=$('#bar'),shield=$('#shield'),panes=[].slice.call(document.querySelectorAll('.pane'));
+var tour=$('#tour'),sU=$('#sU'),sE=$('#sE'),bgE=$('#bgE'),prog=[].slice.call(document.querySelectorAll('.prog i')),bar=$('#bar'),brand=$('.brand'),panes=[].slice.call(document.querySelectorAll('.pane'));
 var CITY={uk:[['Londres','Big Ben, o Tâmisa e centenas de idiomas falados nas ruas da capital.'],['Oxford','Sede da mais antiga universidade do mundo de língua inglesa.'],['Cambridge','Universidade histórica e casa dos famosos exames Cambridge English.'],['Stratford-upon-Avon','Terra de William Shakespeare, o autor mais encenado do mundo.'],['Liverpool','A cidade dos Beatles, onde o rock britânico ganhou o planeta.'],['Edimburgo','Capital da Escócia, com um castelo no alto de um vulcão extinto.']],
 es:[['Madrid','A capital: Museo del Prado, Parque del Retiro e noites que começam tarde.'],['Barcelona','A cidade de Gaudí e da Sagrada Família, de frente para o Mediterrâneo.'],['Sevilla','Flamenco, laranjeiras nas ruas e o palácio do Real Alcázar.'],['Granada','Aos pés da Sierra Nevada, guarda a Alhambra, joia da arte islâmica.'],['Salamanca','Sua universidade, de 1218, é uma das mais antigas da Europa.'],['Santiago','Destino final do Caminho de Santiago, rota de peregrinos há mil anos.']]};
 var PH={"uk": ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Tower_Bridge_in_London_at_night.jpg/960px-Tower_Bridge_in_London_at_night.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Christ_Church_Oxford_from_St_Aldates.jpg/960px-Christ_Church_Oxford_from_St_Aldates.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/King%27s_College%2C_Cambridge%2C_England-LCCN2002696457.jpg/960px-King%27s_College%2C_Cambridge%2C_England-LCCN2002696457.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Trinity_Church_from_the_river%2C_Stratford-on-Avon%2C_England-LCCN2002708132.tif/lossy-page1-960px-Trinity_Church_from_the_river%2C_Stratford-on-Avon%2C_England-LCCN2002708132.tif.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pier_Head_buildings_from_Albert_Dock.JPG/960px-Pier_Head_buildings_from_Albert_Dock.JPG", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Sunny_view_of_Edinburgh_Castle.jpg/960px-Sunny_view_of_Edinburgh_Castle.jpg"], "es": ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Plaza_Mayor%2C_Madrid%2C_low_sun.jpg/960px-Plaza_Mayor%2C_Madrid%2C_low_sun.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nave_of_Sagrada_Fam%C3%ADlia%2C_Barcelona%2C_2023.jpg/960px-Nave_of_Sagrada_Fam%C3%ADlia%2C_Barcelona%2C_2023.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Plaza_de_Espa%C3%B1a_-_Seville%2C_Spain_-_DSC07284.JPG/960px-Plaza_de_Espa%C3%B1a_-_Seville%2C_Spain_-_DSC07284.JPG", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/960px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Salamanca_-_Plaza_Mayor%2C_nocturno_3.jpg/960px-Salamanca_-_Plaza_Mayor%2C_nocturno_3.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Catedral_de_Santiago_de_Compostela_%28Galicia%29.jpg/960px-Catedral_de_Santiago_de_Compostela_%28Galicia%29.jpg"]};
@@ -317,7 +312,7 @@ function frame(ts){
   var vh=window.innerHeight;
   /* abertura */
   var h=clamp(sy/vh);
-  shield.style.setProperty('--sy',(-h*vh*.18)+'px');shield.style.setProperty('--ss',String(1-h*.35));
+  brand.style.setProperty('--by',(-h*vh*.2)+'px');
   panes.forEach(function(p){p.style.setProperty('--py',(sy*.16)+'px');p.style.setProperty('--ph',(sy*.07)+'px');});
   bar.classList.toggle('on',sy>vh*.8);
   /* tour */
