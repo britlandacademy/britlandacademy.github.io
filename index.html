@@ -79,6 +79,47 @@ section h2{font-size:clamp(26px,3.6vw,36px);line-height:1.15;margin:0 0 10px;col
 .plan li:first-child{border-top:0}
 .plan li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
 .plan .btn{justify-content:center}
+.cursel{display:inline-flex;border:2px solid var(--navy);border-radius:99px;overflow:hidden;margin:0 0 22px}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .cursel{border-color:var(--gold)}}
+.cursel button{font:700 15px system-ui;padding:9px 24px;border:0;background:transparent;color:inherit;cursor:pointer}
+.cursel button[aria-pressed=true]{background:var(--navy);color:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .cursel button[aria-pressed=true]{background:var(--gold);color:#1a1405}}
+.cmpw{overflow-x:auto;max-width:1040px;margin:0 auto;-webkit-overflow-scrolling:touch}
+.cmpcards{display:none}
+@media(max-width:700px){.cmpw{display:none}.cmpcards{display:grid;grid-template-columns:1fr;gap:26px;max-width:460px;margin:0 auto}.cmpcards .plan .btn{margin-top:auto}.cmpcards .amt{font-size:38px}}
+.cmp{width:100%;min-width:680px;border-collapse:collapse;font:16px system-ui;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.cmp th,.cmp td{padding:13px 16px;border-top:1px solid var(--line);text-align:center;vertical-align:middle}
+.cmp tbody th{text-align:left;font:400 16px system-ui;color:var(--mut)}
+.cmp thead th{background:var(--navy);color:#fff;border-top:0;position:relative;padding-top:22px}
+.cmp thead th.hi{background:var(--gold);color:#1a1405}
+.cmp thead th .nm{display:block;font:700 18px Georgia,serif}
+.cmp thead th .p{display:block;font:800 26px/1.15 system-ui;margin-top:4px}
+.cmp thead th .sb{display:block;font:13px system-ui;opacity:.8;margin-top:2px}
+.cmp thead th .bst{position:absolute;top:6px;left:50%;transform:translateX(-50%);font:700 11px system-ui;letter-spacing:.08em;text-transform:uppercase}
+.cmp tbody td.hi{background:#fffaf0}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .cmp tbody td.hi{background:#1d2440}}
+.cmp .btn{font-size:15px;padding:10px 18px}
+.bh2{font:700 24px Georgia,serif;text-align:center;margin:46px 0 20px}
+.two{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;max-width:1040px;margin:0 auto;align-items:start}
+.lb{font:700 14px system-ui;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 10px}
+.pickrow{display:flex;flex-direction:column;gap:10px;margin:0 0 22px}
+.pickrow button{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;cursor:pointer;color:inherit;font:inherit}
+.pickrow button.on{border-color:var(--gold)}
+.pickrow b{display:block;font:700 18px Georgia,serif}
+.pickrow small{display:block;color:var(--mut);font:14px system-ui;margin-top:2px}
+.pickrow .pp{margin-left:auto;font:800 20px system-ui;color:var(--navy);white-space:nowrap}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .pickrow .pp{color:#fff}}
+.save{display:inline-block;background:#e3efe5;color:#1d5e2e;border-radius:99px;padding:1px 9px;font:700 13px system-ui;margin-left:8px;vertical-align:1px}
+.morelink{background:transparent;border:0;color:inherit;text-decoration:underline;font:700 15px system-ui;cursor:pointer;padding:4px 0;margin:-14px 0 0}
+.sumbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;position:sticky;top:90px}
+.sumbox h3{font:700 20px Georgia,serif;margin:0 0 14px}
+.sumbox .r{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font:16px system-ui}
+.sumbox .r.d{color:#1d5e2e;font-weight:700}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .sumbox .r.d{color:#7fd29a}}
+.sumbox .r.t{font:800 22px system-ui;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+.sumbox .btn{width:100%;justify-content:center;margin-top:18px}
+.fine{font:13px/1.5 system-ui;color:var(--mut);margin:12px 0 0}
+@media(max-width:860px){.two{grid-template-columns:1fr}.sumbox{position:static}}
 .note{text-align:center;color:var(--mut);font-size:14px;margin-top:18px;font-family:system-ui}
 .band{background:var(--navy);color:#fff;border-radius:22px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .band h2{color:#fff;margin:0 0 6px}.band p{margin:0;color:#d0d9ee}
@@ -149,22 +190,9 @@ body{padding-bottom:84px}.fl{bottom:16px;right:16px;z-index:999}}
 </div></div></section>
 
 <section id="prices"><div class="wrap">
-<h2 style="text-align:center" data-t="pr">Planos</h2>
-<p class="sub" style="text-align:center;margin-inline:auto" data-t="prsub">Escolha entre atenção exclusiva ou aulas em turma pequena. Valores mensais.</p>
-<div class="price">
-<div class="plan vip"><span class="badge" data-t="vipb">Atenção exclusiva</span>
-<h3>VIP</h3>
-<div class="amt">€120<small data-t="mo"> /mês</small></div>
-<div class="per" data-t="vipper">2 aulas por semana · cerca de €15 por aula</div>
-<ul><li data-t="v1">Aulas individuais ao vivo</li><li data-t="v2">100% do tempo de aula é seu</li><li data-t="v3">Ritmo e conteúdo feitos para o seu objetivo</li><li data-t="v4">Horários combinados com você</li></ul>
-<a class="btn wa" href="#" data-t="vipcta" data-plan="vip">Quero o VIP</a></div>
-<div class="plan"><h3 data-t="gh">Em grupo</h3>
-<div class="amt">€80<small data-t="mo2"> /mês</small></div>
-<div class="per" data-t="gper">Turma de no máximo 4 alunos</div>
-<ul><li data-t="g1">Aulas ao vivo em turma pequena</li><li data-t="g2">Todos falam em toda aula</li><li data-t="g3">Estude com colegas no seu nível</li></ul>
-<a class="btn d wa" href="#" data-t="gcta" data-plan="group">Quero o grupo</a></div>
-</div>
-<p class="note" data-t="note">Não sabe qual escolher? Faça uma aula experimental e converse comigo.</p>
+<h2 style="text-align:center" data-t="pr">Escolha seu plano</h2>
+<p class="sub" style="text-align:center;margin-inline:auto" data-t="prsub">Comece com 2 aulas grátis. Você só decide depois.</p>
+<div id="planbox"></div>
 </div></section>
 
 <section class="alt"><div class="wrap"><div class="band">
@@ -185,30 +213,32 @@ body{padding-bottom:84px}.fl{bottom:16px;right:16px;z-index:999}}
 <a class="fl wa whatsapp-float" href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 13.9c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.9-2 .2-.2.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.900 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.5-.1l1.800.9c.3.1.4.2.5.3.1.2.1.8-.1 1.400z"/></svg><span data-t="wa">WhatsApp</span></a>
 
 <script src="js/billing-config.js"></script>
+<script src="js/plans-site.js"></script>
 <script>
 var NUM='5511914881274';
-var D={pt:{fy5:'Está começando do zero e quer um professor que guie cada passo.',fy4:'Já estudou por anos e sente que não sai do lugar.',fy3:'Mora fora do Brasil e quer se comunicar sem depender de tradução.',fy2:'Precisa do idioma no trabalho, em reuniões ou entrevistas.',fy1:'Você entende bastante, mas trava quando precisa falar.',fy:'Esta página é para você se…',t3:'Horário flexível combinado com você',t2:'Planos Individuais (VIP) ou em Grupo',t1:'Experimente 2 aulas ao vivo sem compromisso',nav1:'Como funciona',nav2:'Cursos',nav3:'Planos',nav4:'Área do aluno',
-h1:'Pare de travar na hora de falar. <em>Fale com confiança</em> em aulas individuais ao vivo.',lead:'Inglês, espanhol e português, online e no seu horário. Você fala desde a primeira aula, é corrigido na hora e termina cada encontro falando mais.',cta1:'Agendar 2 aulas grátis →',cta2:'Ver planos VIP e Group',l1:'Inglês',l2:'Espanhol',l3:'Português',l4:'Business English',
+var D={pt:{fy5:'Está começando do zero e quer um professor que guie cada passo.',fy4:'Já estudou por anos e sente que não sai do lugar.',fy3:'Mora fora do Brasil e quer se comunicar sem depender de tradução.',fy2:'Precisa do idioma no trabalho, em reuniões ou entrevistas.',fy1:'Você entende bastante, mas trava quando precisa falar.',fy:'Esta página é para você se…',t3:'Horário flexível combinado com você',t2:'Turma de até 4, dupla ou individual',t1:'Experimente 2 aulas ao vivo sem compromisso',nav1:'Como funciona',nav2:'Cursos',nav3:'Planos',nav4:'Área do aluno',
+h1:'Pare de travar na hora de falar. <em>Fale com confiança</em> em aulas individuais ao vivo.',lead:'Inglês, espanhol e português, online e no seu horário. Você fala desde a primeira aula, é corrigido na hora e termina cada encontro falando mais.',cta1:'Agendar 2 aulas grátis →',cta2:'Ver os planos',l1:'Inglês',l2:'Espanhol',l3:'Português',l4:'Business English',
 how:'O que você ganha com as aulas',howsub:'Resultado primeiro, método depois: tudo foi pensado para você falar mais e com menos medo.',s1h:'Fale desde a primeira aula',s1p:'Perguntas e respostas curtas, em ritmo constante. A maior parte do tempo é a sua voz, não a do professor.',s2h:'Perca o medo de errar',s2p:'Cada erro é corrigido na hora e você repete até soar natural. Errar aqui é parte do caminho.',s3h:'Continue evoluindo entre as aulas',s3p:'Você ganha uma área online com textos, áudios e exercícios corrigidos automaticamente para praticar no seu tempo.',
 co:'Cursos',cosub:'Do primeiro dia até a fluência, com a mesma forma de estudar em todos os idiomas.',c1k:'Idioma',c2k:'Idioma',c3k:'Idioma',c4k:'Profissional',c1h:'Inglês',c1p:'Do iniciante ao avançado, com ênfase em conversação, compreensão e vocabulário do dia a dia.',c2h:'Espanhol',c2p:'Comece do zero e ganhe confiança para viajar, trabalhar e conversar com naturalidade.',c3h:'Português',c3p:'Para estrangeiros que querem falar português com clareza, e para brasileiros que querem escrever melhor.',c4h:'Business English',c4p:'Reuniões, e-mails, apresentações e negociação: o inglês que o seu trabalho exige.',
-pr:'Escolha seu plano',prsub:'Comece com 2 aulas grátis. Só depois você decide.',vipb:'Atenção exclusiva',mo:' /mês',mo2:' /mês',vipper:'2 aulas por semana · cerca de €15 por aula',v1:'Aulas individuais ao vivo',v2:'100% do tempo de aula é seu',v3:'Ritmo e conteúdo feitos para o seu objetivo',v4:'Horários combinados com você',vipcta:'Agendar 2 aulas grátis no VIP',gh:'Em grupo',gper:'Turma de no máximo 4 alunos',g1:'Aulas ao vivo em turma pequena',g2:'Todos falam em toda aula',g3:'Estude com colegas no seu nível',gcta:'Agendar 2 aulas grátis no grupo',note:'Em dúvida entre os dois? Comece pelas 2 aulas grátis e me conte seu objetivo.',
+pr:'Escolha seu plano',prsub:'Comece com 2 aulas grátis. Você só decide depois.',
 bh:'Descubra seu nível em minutos',bp:'Faça o teste de nível e eu indico o melhor ponto de partida para você.',bcta:'Fazer o teste de nível',fh:'Faça 2 aulas grátis e descubra seu nível',fp:'Me chame no WhatsApp, escolhemos um horário e você começa a falar já nesta semana.',fcta:'Agendar 2 aulas grátis →',fa:'Área do aluno',wa:'WhatsApp',
-msg:'Olá! Quero agendar minhas 2 aulas grátis na Britland Academy.',msgvip:'Olá! Quero agendar minhas 2 aulas grátis no plano VIP da Britland Academy.',msgg:'Olá! Quero agendar minhas 2 aulas grátis no plano em grupo da Britland Academy.',menu:'Menu'},
-en:{fy5:'You are starting from zero and want a teacher to guide every step.',fy4:'You have studied for years and feel stuck.',fy3:'You live abroad and want to communicate without relying on translation.',fy2:'You need the language at work, in meetings or interviews.',fy1:'You understand a lot, but freeze when you have to speak.',fy:'This page is for you if…',t3:'Flexible schedule agreed with you',t2:'Individual (VIP) or Group plans',t1:'Try 2 live lessons, no commitment',nav1:'How it works',nav2:'Courses',nav3:'Plans',nav4:'Student area',
-h1:'Stop freezing when you have to speak. <em>Speak with confidence</em> in live one-to-one lessons.',lead:'English, Spanish and Portuguese, online and on your schedule. You speak from the first lesson, get corrected on the spot and leave every class speaking more.',cta1:'Book 2 free lessons →',cta2:'See VIP and Group plans',l1:'English',l2:'Spanish',l3:'Portuguese',l4:'Business English',
+msg:'Olá! Quero agendar minhas 2 aulas grátis na Britland Academy.',menu:'Menu'},
+en:{fy5:'You are starting from zero and want a teacher to guide every step.',fy4:'You have studied for years and feel stuck.',fy3:'You live abroad and want to communicate without relying on translation.',fy2:'You need the language at work, in meetings or interviews.',fy1:'You understand a lot, but freeze when you have to speak.',fy:'This page is for you if…',t3:'Flexible schedule agreed with you',t2:'Group of up to 4, in a pair, or one to one',t1:'Try 2 live lessons, no commitment',nav1:'How it works',nav2:'Courses',nav3:'Plans',nav4:'Student area',
+h1:'Stop freezing when you have to speak. <em>Speak with confidence</em> in live one-to-one lessons.',lead:'English, Spanish and Portuguese, online and on your schedule. You speak from the first lesson, get corrected on the spot and leave every class speaking more.',cta1:'Book 2 free lessons →',cta2:'See the plans',l1:'English',l2:'Spanish',l3:'Portuguese',l4:'Business English',
 how:'What you get from the lessons',howsub:'Results first, method second: everything is built so you speak more and fear less.',s1h:'Speak from the first lesson',s1p:'Short questions and answers at a steady pace. Most of the time is your voice, not the teacher’s.',s2h:'Lose the fear of mistakes',s2p:'Every mistake is corrected on the spot and you repeat until it sounds natural. Mistakes are part of the way.',s3h:'Keep improving between lessons',s3p:'You get an online area with texts, audio and automatically corrected exercises to practise in your own time.',
 co:'Courses',cosub:'From day one to fluency, with the same way of studying in every language.',c1k:'Language',c2k:'Language',c3k:'Language',c4k:'Professional',c1h:'English',c1p:'From beginner to advanced, with emphasis on conversation, listening and everyday vocabulary.',c2h:'Spanish',c2p:'Start from zero and gain the confidence to travel, work and chat naturally.',c3h:'Portuguese',c3p:'For foreigners who want to speak clear Portuguese, and for Brazilians who want to write better.',c4h:'Business English',c4p:'Meetings, emails, presentations and negotiation: the English your job demands.',
-pr:'Choose your plan',prsub:'Start with 2 free lessons. Decide only afterwards.',vipb:'Exclusive attention',mo:' /month',mo2:' /month',vipper:'2 lessons a week · about €15 per lesson',v1:'Live one-to-one lessons',v2:'100% of the lesson time is yours',v3:'Pace and content built around your goal',v4:'Schedule agreed with you',vipcta:'Book 2 free lessons with VIP',gh:'Group',gper:'Class of up to 4 students',g1:'Live lessons in a small group',g2:'Everyone speaks in every lesson',g3:'Study with classmates at your level',gcta:'Book 2 free lessons in a group',note:'Torn between the two? Start with the 2 free lessons and tell me your goal.',
+pr:'Choose your plan',prsub:'Start with 2 free lessons. Decide only afterwards.',
 bh:'Find your level in minutes',bp:'Take the placement test and I will tell you the best place to start.',bcta:'Take the placement test',fh:'Take 2 free lessons and find your level',fp:'Message me on WhatsApp, we pick a time and you start speaking this very week.',fcta:'Book 2 free lessons →',fa:'Student area',wa:'WhatsApp',
-msg:'Hello! I would like to book my 2 free lessons at Britland Academy.',msgvip:'Hello! I would like to book my 2 free lessons on the VIP plan at Britland Academy.',msgg:'Hello! I would like to book my 2 free lessons on the group plan at Britland Academy.',menu:'Menu'}};
+msg:'Hello! I would like to book my 2 free lessons at Britland Academy.',menu:'Menu'}};
 var lang='pt';try{var s=localStorage.getItem('bl-lang');if(s==='en'||s==='pt')lang=s;else if(!/^pt/i.test(navigator.language||''))lang='en';}catch(e){if(!/^pt/i.test(navigator.language||''))lang='en';}
 function wa(k){return 'https://wa.me/'+NUM+'?text='+encodeURIComponent(D[lang][k]);}
 function apply(){
   document.documentElement.lang=lang==='pt'?'pt-BR':'en';
   document.querySelectorAll('[data-t]').forEach(function(e){var v=D[lang][e.getAttribute('data-t')];if(v!=null)e.innerHTML=v;});
   document.querySelectorAll('[data-ta]').forEach(function(e){var v=D[lang][e.getAttribute('data-ta')];if(v!=null)e.setAttribute('aria-label',v);});
-  document.querySelectorAll('.wa').forEach(function(a){var t=a.getAttribute('data-t'),pk=a.getAttribute('data-plan'),ck=pk&&window.BL_BILLING?window.BL_BILLING.checkoutFor(pk):'';a.href=ck||wa(t==='vipcta'?'msgvip':(t==='gcta'?'msgg':'msg'));a.target='_blank';a.rel='noopener';});
+  document.querySelectorAll('.wa').forEach(function(a){var t=a.getAttribute('data-t'),pk=a.getAttribute('data-plan'),ck=pk&&window.BL_BILLING?window.BL_BILLING.checkoutFor(pk):'';a.href=ck||wa('msg');a.target='_blank';a.rel='noopener';});
   document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l')===lang?'true':'false');});
+  if(window.BL_PLANSITE)BL_PLANSITE.render(lang);
   try{localStorage.setItem('bl-lang',lang);}catch(e){}
 }
 (function(){var mb=document.getElementById('menuBtn'),mp=document.getElementById('menuPanel');
