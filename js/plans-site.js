@@ -56,7 +56,7 @@ en:{best:'Most popular',title:'Choose your plan',cta:'Start with 2 free lessons'
 function periods(cur){
   var P=[{k:'mensal',off:0,m:1}];
   if(cur==='BRL')P.push({k:'cartao6',off:5,m:1});
-  P.push({k:'avista3',off:5,m:3},{k:'avista6',off:10,m:6});
+  P.push({k:'avista3',off:5,m:3},{k:'avista6',off:Date.now()<Date.UTC(2026,11,1,3,0,0)?30:10,m:6});
   return P;
 }
 function money(cur,v){
@@ -101,6 +101,7 @@ function render(l){
   P.forEach(function(x){
     var b=el('button',{type:'button','aria-pressed':x.k===per?'true':'false',title:(cur!=='BRL'&&L.paynote_e[x.k])||L.paynote[x.k]},plabel(L,x.k));
     if(x.off)b.append(' ',el('span',{class:'save'},'\u2212'+x.off+'%'));
+    if(x.k==='avista6'&&x.off>10)b.append(' ',el('span',{class:'save'},lang==='pt'?'at\u00e9 30/11':'until Nov 30'));
     b.addEventListener('click',function(){per=x.k;render();});ps.append(b);});
   host.append(el('div',{style:'text-align:center'},ps));
 
